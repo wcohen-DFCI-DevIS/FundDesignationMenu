@@ -1,0 +1,1926 @@
+<!--javascript common lib-->
+<script src="/CommonLib/lib/INC_jsFields.js" Language="JavaScript"></script>
+<form name="SUPPORTER1109950" action="https://www.kintera.org/site/apps/ka/sd/donorcustom.asp?c=**cindex**&b=**bindex**" method="POST" id="customDonation" autocomplete="off" onsubmit="return CheckForm1109950(document.SUPPORTER1109950);">
+    <input type="hidden" value="" name="Reload" id="Reload" />
+    <input type="hidden" value="https://www.kintera.org/site/apps/ka/sd/donorcustom.asp?c=**cindex**&b=**bindex**" name="Caller" id="Caller" />
+    <input type="hidden" value="" name="ParticipantSupporterID" id="ParticipantSupporterID" />
+    <input type="hidden" value="" name="CreditTeamID" id="CreditTeamID" />
+    <input type="hidden" value="" name="SupporterID" id="SupporterID" />
+    <input type="hidden" value="" name="LoginID" id="LoginID" />
+    <input type="hidden" value="5" name="FormID" id="FormID" />
+    <input type="hidden" value="" name="RelationSupporterID" id="RelationSupporterID" />
+    <input value="Y" name="Individual" id="Individual" type="hidden">
+    <input type="hidden" value="" name="PledgeLevelID" id="PledgeLevelIDY">
+    <!-- Hidden custom fields. Populated on form submission -->
+    <input type="hidden" name="Field6077627" value="" />
+    <!-- Last Gift Amount -->
+    <input type="hidden" name="Field6077668" value="" />
+    <!-- Last Gift Frequency -->
+    <input type="hidden" name="Field6077628" value="" />
+    <!-- Last Gift Direction  -->
+    <input type="hidden" name="Field6077634" value="" />
+    <!-- Last Gift Honor/Memory  -->
+    <input type="hidden" name="Field6078013" value="" />
+    <!-- Last Gift Honor/Memory Name -->
+    <input type="hidden" name="Field6077635" value="" />
+    <!-- Last Gift Notify Name  -->
+    <input type="hidden" name="Field6077636" value="" />
+    <!-- Last Gift Notify Address 1  -->
+    <input type="hidden" name="Field6077637" value="" />
+    <!-- Last Gift Notify Address 2  -->
+    <input type="hidden" name="Field6077638" value="" />
+    <!-- Last Gift Notify City  -->
+    <input type="hidden" name="Field6077639" value="" />
+    <!-- Last Gift Notify State  -->
+    <input type="hidden" name="Field6077646" value="" />
+    <!-- Last Gift Notify Province  -->
+    <input type="hidden" name="Field6077640" value="" />
+    <!-- Last Gift Notify Country  -->
+    <input type="hidden" name="Field6077641" value="" />
+    <!-- Last Gift Notify Zip/Postal Code  -->
+    <!-- Hidden recurring fields. Do not delete -->
+    <div id="payment_frequency" style="display:none;">
+        <input type="radio" name="RecurringOption" value="N" onclick="CheckRecurring(form,'N');" id="RecurringOptionN" checked="checked">
+        <input type="radio" name="RecurringOption" value="Y" onclick="CheckRecurring(form,'Y');" id="RecurringOptionY">
+        <input type="hidden" value="4/01/2011" name="RecurringDate" id="RecurringDate">
+        <input type="text" size=12 maxlength=12 name="RecurringAmount" value="" onblur="ChangeNumber(form,this);CountTotal(this,form.NumberOfPayments,form.TotalAmount);" disabled id="RecurringAmount">
+        <input type="hidden" name="NumberOfPayments" value="1">
+        <input type="text" size=12 maxlength=12 name="TotalAmount" value="" disabled id="TotalAmount">
+        <input type="hidden" name="TotalAmountHidden" value="">
+        <script language="JavaScript">
+        <!--
+        function ChangeNumber(thisform, ptr) {
+            if (thisform.BillingScheduleID.value == "0") {
+                thisform.Reload.value = 'Y';
+                thisform.submit();
+                return false;
+            } else
+                return CountTotal(thisform.RecurringAmount, ptr, thisform.TotalAmount);
+        }
+
+        function ChangeSchedule(thisform, ptr) {
+            if ((thisform.BillingScheduleID.value != "0" && thisform.Amount1 != null) || (thisform.BillingScheduleID.value == "0" && thisform.Amount1 == null)) {
+                thisform.Reload.value = 'Y';
+                thisform.submit();
+            }
+            return false;
+        }
+        //-->
+        </script>
+    </div>
+    <div id="form_left">
+        <h2>Give Now</h2>
+        <ul>
+            <li class="selected">1. Gift Info</li>
+            <li>2. Contact Info</li>
+            <li>3. Payment Info</li>
+        </ul>
+    </div>
+    <div id="donation_form_mobile">
+        <input type="hidden" value="" name="Tribute" id="Tribute" />
+        <!-- Link removed 9/8/14 by John Siemiatkoski 
+<h4 style="font-weight:normal">If you are making a gift in response to the <strong>WEEI/NESN Jimmy Fund Radio-Telethon presented by Arbella Insurance Foundation,</strong> please <strong><a href="http://www.jimmyfundradiotelethon.org/makeagift">click here</a>.</strong></h4> -->
+        <h3 class="form_title" id="form_step_title_1"><span class="padding">1. Gift Information</span></h3>
+        <div class="padding" id="form_step_1">
+            <p id="amount-boxes">
+                <span rel="25"><a href="javascript:void(0);">$25</a></span>
+                <span rel="50"><a href="javascript:void(0);">$50</a></span>
+                <span rel="100"><a href="javascript:void(0);">$100</a></span>
+                <span rel="250"><a href="javascript:void(0);">$250</a></span>
+                <span rel="500"><a href="javascript:void(0);">$500</a></span>
+                <span rel="1500"><a href="javascript:void(0);">$1,500</a></span>
+                <span rel="2500"><a href="javascript:void(0);">$2,500</a></span>
+                <span rel="5000"><a href="javascript:void(0);">$5,000</a></span>
+            </p>
+            <p id="bill-amount">
+                <span id="amount_sign">$</span>
+                <input type="text" size="20" maxlength="12" name="Amount" onblur="return CheckAmtLevel(form, this);" ID="Amount" value="Other" />
+                <br/> Total annual giving of $1,500 or more qualifies you for membership in the <a href="#" target="_blank" onclick="window.open('http://www.dana-farber.org/How-to-Help/Leadership-and-Advocacy/President-s-Circle.aspx?track=AGMCCIR51311'); return false;">President's Circle</a>.
+            </p>
+            <p id="checkbox-holder-recurring">
+                <a id="mobile-checkbox-recurring" class="mailing-check" href="#"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_check.png" border="0"/></a>
+                <input style="display:none;" type="checkbox" name="check_freq" id="check_freq" value="1" />
+                <span class="addressText">Make this a recurring gift<br/><small>Your gift will automatically repeat until you decide to cancel it.</small></span>
+                <span id="recurring_options">                    
+                    <input class="radio" type="radio" name="BillingScheduleID" value="1004" rel="Monthly"/>Monthly
+                    <input class="radio" type="radio" name="BillingScheduleID" value="1005" rel="Quarterly"/>Quarterly
+                    <input class="radio" type="radio" name="BillingScheduleID" value="1006" rel="Annually"/>Annually
+                </span>
+                <span class="clear">&nbsp;</span>
+            </p>
+            <p style="padding-top: 30px; padding-top: 3rem;" id="direct_gift_header">Direct Your Gift to Support</p>
+            <p>Your gift will be directed to the area of greatest need or you may choose a designation below. To support an area not listed, contact Donor Services at 617-632-2903 or <a href="mailto:AskCS@dfci.harvard.edu">AskCS@dfci.harvard.edu</a>.</p>
+            <!-- Fund Code Section : START -->
+            <input type="hidden" value="1" name="DesignationOption" id="DesignationOption" />
+            <ul class="mcdropdown_menu" id="designationDD">
+                <li rel="10507">Area of greatest need</li>
+                <li rel="352590">Family Wishes</li>
+                <li rel="375492">Basic Research</li>
+                <li rel="10561">Cancer Prevention</li>
+                <li rel="920579">Drug Development</li>
+                <li rel="1">Gastrointestinal Cancers
+                    <ul>
+                        <li rel="10565">Colon Cancer</li>
+                        <li rel="369981">Colorectal Cancer</li>
+                        <li rel="916427">Esophageal Cancer</li>
+                        <li rel="920431">Neuroendocrine Tumor</li>
+                        <li rel="380898">Pancreatic Cancer</li>
+                        <li rel="369979">Stomach &amp; Gastric Cancers</li>
+                    </ul>
+                </li>
+                <li rel="2">Genitourinary (Urinary/Men's
+                    <br /> Reproductive) Cancers
+                    <ul>
+                        <li rel="369983">Bladder Cancer</li>
+                        <li rel="369985">Kidney Cancer</li>
+                        <li rel="10562">Prostate Cancer</li>
+                    </ul>
+                </li>
+                <li rel="915155">Global Cancer Medicine</li>
+                <li rel="370012">Head and Neck Cancers</li>
+                <li rel="4">Hematologic (Blood) Cancers
+                    <ul>
+                        <li rel="910528">Greatest need</li>
+                        <li rel="369998">Leukemia - Adult</li>
+                        <li rel="370000">Lymphoma - Adult</li>
+                        <li rel="920581">Leukemia and Lymphoma - Pediatric</li>
+                        <li rel="370002">Multiple Myeloma</li>
+                        <li rel="370004">Non-Hodgkins Lymphoma</li>
+                        <li rel="369993">Waldenstrom's Macroglobulinemia</li>
+                    </ul>
+                </li>
+                <li rel="913048">Immunology</li>
+                <li rel="10563">Lung Cancer</li>
+                <li rel="358715">Melanoma</li>
+                <li rel="370021">Neuroblastoma</li>
+                <li rel="5">Neurological Cancers
+                    <ul>
+                        <li rel="377394">Brain Tumor — Adult</li>
+                        <li rel="377404">Brain Tumor — Pediatric</li>
+                    </ul>
+                </li>
+                <li rel="377402">Nursing</li>
+                <li rel="6">Patient Assistance
+                    <ul>
+                        <li rel="377396">Patient Assistance — Adult</li>
+                        <li rel="377406">Patient Assistance — Pediatric</li>
+                    </ul>
+                </li>
+                <li rel="10560">Pediatric Oncology</li>
+                <li rel="903461"><em>Profile</em> Genetics Analysis</li>
+                <li rel="916425">Psychosocial Oncology &amp;
+                    <br /> Palliative Care</li>
+                <li rel="920583">Radiation Oncology</li>
+                <li rel="10">Sarcoma and Bone Cancers
+                    <ul>
+                        <li rel="370033">Sarcoma and Bone Cancers — Adult</li>
+                        <li rel="920585">Sarcoma and Bone Cancers — Pediatric</li>
+                    </ul>
+                </li>
+                <li rel="11">Stem Cell Transplant
+                    <ul>
+                        <li rel="377400">Stem Cell Transplant — Adult</li>
+                        <li rel="920587">Stem Cell Transplant — Pediatric</li>
+                    </ul>
+                </li>
+                <li rel="7">Survivorship
+                    <ul>
+                        <li rel="377398">Survivorship — Adult</li>
+                        <li rel="377408">Survivorship — Pediatric</li>
+                    </ul>
+                </li>
+                <li rel="9">Women's Cancers
+                    <ul>
+                        <li rel="352801">Greatest need</li>
+                        <li rel="10559">Breast Cancer</li>
+                        <li rel="370041">Gynecologic Cancer</li>
+                        <li rel="370039">Ovarian Cancer</li>
+                    </ul>
+                </li>
+                <li rel="386211">Zakim Center for Integrative
+                    <br /> Therapies
+                </li>
+            </ul>
+            <input type="hidden" value="583691" name="BeneficiaryFund913048" />
+            <input type="text" name="BeneficiaryID" id="BeneficiaryID" value="10507" />
+            <input type="hidden" value="10486" name="BeneficiaryFund10507" />
+            <input type="hidden" value="35486" name="BeneficiaryFund352590" />
+            <input type="hidden" value="44384" name="BeneficiaryFund369995" />
+            <input type="hidden" value="38463" name="BeneficiaryFund377398" />
+            <input type="hidden" value="44396" name="BeneficiaryFund377396" />
+            <input type="hidden" value="44399" name="BeneficiaryFund377394" />
+            <input type="hidden" value="44378" name="BeneficiaryFund369983" />
+            <input type="hidden" value="44391" name="BeneficiaryFund377400" />
+            <input type="hidden" value="16811" name="BeneficiaryFund10559" />
+            <input type="hidden" value="16813" name="BeneficiaryFund10561" />
+            <input type="hidden" value="16812" name="BeneficiaryFund10560" />
+            <input type="hidden" value="44377" name="BeneficiaryFund369981" />
+            <input type="hidden" value="16817" name="BeneficiaryFund10565" />
+            <input type="hidden" value="580593" name="BeneficiaryFund910453" />
+            <input type="hidden" value="586184" name="BeneficiaryFund916427">
+            <input type="hidden" value="580682" name="BeneficiaryFund910526" />
+            <input type="hidden" value="44405" name="BeneficiaryFund370041" />
+            <input type="hidden" value="44394" name="BeneficiaryFund370012" />
+            <input type="hidden" value="580683" name="BeneficiaryFund910528" />
+            <input type="hidden" value="44379" name="BeneficiaryFund369985" />
+            <input type="hidden" value="44385" name="BeneficiaryFund369998" />
+            <input type="hidden" value="49844" name="BeneficiaryFund380900" />
+            <input type="hidden" value="44387" name="BeneficiaryFund370000" />
+            <input type="hidden" value="44403" name="BeneficiaryFund370035" />
+            <input type="hidden" value="44388" name="BeneficiaryFund370002" />
+            <input type="hidden" value="44398" name="BeneficiaryFund370021" />
+            <input type="hidden" value="44389" name="BeneficiaryFund370004" />
+            <input type="hidden" value="44397" name="BeneficiaryFund377402" />
+            <input type="hidden" value="69879" name="BeneficiaryFund396287" />
+            <input type="hidden" value="44404" name="BeneficiaryFund370039" />
+            <input type="hidden" value="49843" name="BeneficiaryFund380898" />
+            <input type="hidden" value="44400" name="BeneficiaryFund377406" />
+            <input type="hidden" value="44401" name="BeneficiaryFund377404" />
+            <input type="hidden" value="44402" name="BeneficiaryFund377408" />
+            <input type="hidden" value="69880" name="BeneficiaryFund396289" />
+            <input type="hidden" value="575073" name="BeneficiaryFund903461" />
+            <input type="hidden" value="16814" name="BeneficiaryFund10562" />
+            <input type="hidden" value="586183" name="BeneficiaryFund916425">
+            <input type="hidden" value="16818" name="BeneficiaryFund375492" />
+            <input type="hidden" value="42820" name="BeneficiaryFund370033" />
+            <input type="hidden" value="38461" name="BeneficiaryFund358715" />
+            <input type="hidden" value="44376" name="BeneficiaryFund369979" />
+            <input type="hidden" value="44382" name="BeneficiaryFund369991" />
+            <input type="hidden" value="44393" name="BeneficiaryFund370010" />
+            <input type="hidden" value="44383" name="BeneficiaryFund369993" />
+            <input type="hidden" value="10488" name="BeneficiaryFund352801" />
+            <input type="hidden" value="48892" name="BeneficiaryFund386211" />
+            <!-- 2018 Additions BEGIN -->
+            <input type=hidden name='BeneficiaryFund920579' value='587231'>
+            <input type=hidden name='BeneficiaryFund920431' value='587144'>
+            <input type=hidden name='BeneficiaryFund915155' value='585217'>
+            <input type=hidden name='BeneficiaryFund920581' value='587232'>
+            <input type=hidden name='BeneficiaryFund920583' value='587233'>
+            <input type=hidden name='BeneficiaryFund920585' value='587234'>
+            <input type=hidden name='BeneficiaryFund920587' value='587235'>
+            <!-- 2018 Additions END -->
+            <!-- DUMMY FUNDS -->
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY1" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY4" />
+            <input type="hidden" value="16815" name="BeneficiaryFund10563" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY6" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY7" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY8" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY9" />
+            <input type="hidden" value="35486" name="BeneficiaryFundDUMMY10" />
+            <!-- DUMMY FUNDS -->
+            <!-- Fund Code Section : END -->
+            <p id="memory_honor_p">Is your gift in memory or honor of someone?</p>
+            <input class="radio" type="radio" name="Field3074905" value="No" checked="checked" /> No
+            <input class="radio" type="radio" name="Field3074905" value="In memory of" /> In memory of
+            <input class="radio" type="radio" name="Field3074905" value="In honor of" /> In honor of
+            <div id="tribute_fields">
+                <div class="form_row">
+                    <label for="Field3074920" class="with_tooltip" id="honor_type_label">In memory of</label>
+                    <div class="tooltip_container">
+                        <div class="HelpContainer"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/ICON-HELP-QUESTION.PNG" /></div>
+                        <span style="display: none;" class="mycontent">
+                            <div class="TipHeader" id="honortype_tooltip">In memory of</div>
+                            <div class="Tip" id="honortype_tooltip_content">Please enter the first and last name of the person you are memorializing.</div>
+                        </span>
+                    </div>
+                    <input type="text" size="35" maxlength=100 name="Field3074920" value="" id="Field3074920" style="margin-right:10rem;" />
+                </div>
+                <div>
+                    <small id="tribute_address_text">Most recent address, if known</small>
+                    <div class="tooltip_container" id="mra_tooltip_icon">
+                        <div class="HelpContainer"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/ICON-HELP-QUESTION.PNG" /></div>
+                        <span style="display: none;" class="mycontent">
+                            <div class="TipHeader" id="mra_tooltip">Most recent address</div>
+                            <div class="Tip" id="mra_tooltip_content">We ask for the last known address of the person you are memorializing/honoring to ensure your tribute gift is correctly attributed.</div>
+                        </span>
+                    </div>
+                </div>
+                <p>
+                    <label for="Field3074923">Street</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074923" value="" id="Field3074923" />
+                </p>
+                <p>
+                    <label for="Field3074925">City</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074925" value="" id="Field3074925" />
+                </p>
+                <p>
+                    <label for="Field3074926">State</label>
+                    <select name="Field3074926" title="State" id="Field3074926">
+                        <option value=""></option>
+                        <option value="XX">Outside the U.S.</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="AA">Armed Forces Americas</option>
+                        <option value="AE">Armed Forces Europe</option>
+                        <option value="AP">Armed Forces Pacific</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="FM">F.S. Micronesia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="GU">Guam </option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA" selected>Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PW">Palau</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VI">Virgin Islands</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="Field3074927">ZIP/Postal code</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074927" value="" id="Field3074927" />
+                </p>
+                <div class="form_row">
+                    <label for="Field3188864" class="with_tooltip">This gift is from</label>
+                    <div class="tooltip_container">
+                        <div class="HelpContainer"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/ICON-HELP-QUESTION.PNG" /></div>
+                        <span style="display: none;" class="mycontent">
+                            <div class="TipHeader">This gift is from:</div>
+                            <div class="Tip">Please enter the name(s) of the person or group making this gift. This information will be shared with the person or family notified of your gift.</div>
+                        </span>
+                    </div>
+                    <br/>
+                    <input type="text" size="35" maxlength=100 name="Field3188864" value="" id="Field3188864" />
+                </div>
+                <p>Please notify the person or family below of this gift, if desired. We will not specify gift amount.</p>
+                <p>
+                    <label for="Field3074906">Name</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074906" value="" id="Field3074906" />
+                </p>
+                <p>
+                    <label for="Field3074908">Street</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074908" value="" id="Field3074908" />
+                </p>
+                <p>
+                    <label for="Field3074910">City</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074910" value="" id="Field3074910" />
+                </p>
+                <p>
+                    <label for="Field3074929">State</label>
+                    <select name="Field3074929" title="State" id="Field3074929">
+                        <option value=""></option>
+                        <option value="XX">Outside the U.S.</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AS">American Samoa</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="AA">Armed Forces Americas</option>
+                        <option value="AE">Armed Forces Europe</option>
+                        <option value="AP">Armed Forces Pacific</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="DC">District of Columbia</option>
+                        <option value="FM">F.S. Micronesia</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="GU">Guam </option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MH">Marshall Islands</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA" selected>Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="MP">Northern Mariana Islands</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PW">Palau</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="PR">Puerto Rico</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VI">Virgin Islands</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="Field3074912">ZIP/Postal code</label>
+                    <input type="text" size="35" maxlength=100 name="Field3074912" value="" id="Field3074912" />
+                </p>
+            </div>
+            <div class="next_button"><a href="javascript:void(0);" id="next_button_step_1"><img src="/atf/cf/{bad0bac1-71a2-430a-9152-e90b157d020a}/btn_next_tan.png" border="0"/></a></div>
+        </div>
+        <h3 class="form_title" id="form_step_title_2"><span class="padding">2. Your Contact Information</span></h3>
+        <div class="padding" id="form_step_2">
+            <p>
+                <label for="salutation">Title</label>
+                <select name="salutation">
+                    <option value=""></option>
+                    <option value="Dr.">Dr.</option>
+                    <option value="Miss">Miss</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Ms.">Ms.</option>
+                    <option value="Dr. and Dr.">Dr. and Dr.</option>
+                    <option value="Dr. and Mrs.">Dr. and Mrs.</option>
+                    <option value="Mr. and Dr.">Mr. and Dr.</option>
+                    <option value="Mr. and Mrs.">Mr. and Mrs.</option>
+                    <option value="Mr. and Mr.">Mr. and Mr.</option>
+                    <option value="Ms. and Ms.">Ms. and Ms.</option>
+                </select>
+            </p>
+            <div class="form_row">
+                <div class="form_row_45">
+                    <label for="first_name">First name<span class="Alert">*</span></label>
+                    <input type="text" size="35" maxlength="250" name="first_name" value="" class="first_name" />
+                    <input type="hidden" name="lock_first_name" value="" />
+                </div>
+                <div class="form_row_55">
+                    <label for="middle_name">Middle initial</label>
+                    <input class="short_input middle_name" type="text" maxlength="11" name="middle_name" value="">
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <div class="form_row">
+                <div class="form_row_45">
+                    <label for="last_name">Last name<span class="Alert">*</span></label>
+                    <input type="text" size="35" maxlength="250" name="last_name" value="" class="last_name" />
+                    <input type="hidden" name="lock_last_name" value="" />
+                </div>
+                <div class="form_row_55">
+                    <label for="special_field_1">Suffix</label>
+                    <select name="special_field_1" size="1">
+                        <option value=""></option>
+                        <option value="II">II</option>
+                        <option value="III">III</option>
+                        <option value="Jr">Jr</option>
+                        <option value="Sr">Sr</option>
+                        <option value="MD">MD</option>
+                        <option value="DDS">DDS</option>
+                        <option value="PhD">PhD</option>
+                        <option value="ScD">ScD</option>
+                        <option value="Esq">Esq</option>
+                    </select>
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <p>
+                <label for="email_address">Email address<span class="Alert">*</span></label>
+                <input type="email" size="35" maxlength="100" name="email_address" value="" />
+                <input type="hidden" name="lock_email_address" value="" />
+            </p>
+            <p>
+                <label for="email_address">Re-enter email address<span class="Alert">*</span></label>
+                <input type="email" size="35" maxlength="100" name="reenter_email" value="" />
+                <span id="email_match_text"><br/>Your email addresses do not match. Please re-enter.</span>
+            </p>
+            <p class="mailing country">
+                <label for="country">Country<span class="Alert">*</span></label>
+                <select name="country" size=1 title="Country">
+                    <option value="">-- please make a selection --</option>
+                    <option value="AF">Afghanistan</option>
+                    <option value="AX">Aland Islands</option>
+                    <option value="AL">Albania</option>
+                    <option value="DZ">Algeria</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AD">Andorra</option>
+                    <option value="AO">Angola</option>
+                    <option value="AI">Anguilla</option>
+                    <option value="AQ">Antarctica</option>
+                    <option value="AG">Antigua and Barbuda</option>
+                    <option value="AR">Argentina</option>
+                    <option value="AM">Armenia</option>
+                    <option value="AW">Aruba</option>
+                    <option value="AU">Australia</option>
+                    <option value="AT">Austria</option>
+                    <option value="AZ">Azerbaijan</option>
+                    <option value="BS">Bahamas</option>
+                    <option value="BH">Bahrain</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="BB">Barbados</option>
+                    <option value="BY">Belarus</option>
+                    <option value="BE">Belgium</option>
+                    <option value="BZ">Belize</option>
+                    <option value="BJ">Benin</option>
+                    <option value="BM">Bermuda</option>
+                    <option value="BT">Bhutan</option>
+                    <option value="BO">Bolivia, Plurinational State of</option>
+                    <option value="BA">Bosnia and Herzegovina</option>
+                    <option value="BW">Botswana</option>
+                    <option value="BV">Bouvet Island</option>
+                    <option value="BR">Brazil</option>
+                    <option value="IO">British Indian Ocean Territory</option>
+                    <option value="BN">Brunei Darussalam</option>
+                    <option value="BG">Bulgaria</option>
+                    <option value="BF">Burkina Faso</option>
+                    <option value="BI">Burundi</option>
+                    <option value="KH">Cambodia</option>
+                    <option value="CM">Cameroon</option>
+                    <option value="CA">Canada</option>
+                    <option value="CV">Cape Verde</option>
+                    <option value="KY">Cayman Islands</option>
+                    <option value="CF">Central African Republic</option>
+                    <option value="TD">Chad</option>
+                    <option value="CL">Chile</option>
+                    <option value="CN">China</option>
+                    <option value="CX">Christmas Island</option>
+                    <option value="CC">Cocos (Keeling) Islands</option>
+                    <option value="CO">Colombia</option>
+                    <option value="KM">Comoros</option>
+                    <option value="CG">Congo</option>
+                    <option value="CD">Congo, The Democratic Republic of the</option>
+                    <option value="CK">Cook Islands</option>
+                    <option value="CR">Costa Rica</option>
+                    <option value="CI">Cote d'Ivoire</option>
+                    <option value="HR">Croatia</option>
+                    <option value="CU">Cuba</option>
+                    <option value="CY">Cyprus</option>
+                    <option value="CZ">Czech Republic</option>
+                    <option value="DK">Denmark</option>
+                    <option value="DJ">Djibouti</option>
+                    <option value="DM">Dominica</option>
+                    <option value="DO">Dominican Republic</option>
+                    <option value="EC">Ecuador</option>
+                    <option value="EG">Egypt</option>
+                    <option value="SV">El Salvador</option>
+                    <option value="GQ">Equatorial Guinea</option>
+                    <option value="ER">Eritrea</option>
+                    <option value="EE">Estonia</option>
+                    <option value="ET">Ethiopia</option>
+                    <option value="FK">Falkland Islands (Malvinas)</option>
+                    <option value="FO">Faroe Islands</option>
+                    <option value="FJ">Fiji</option>
+                    <option value="FI">Finland</option>
+                    <option value="FR">France</option>
+                    <option value="GF">French Guiana</option>
+                    <option value="PF">French Polynesia</option>
+                    <option value="TF">French Southern Territories</option>
+                    <option value="GA">Gabon</option>
+                    <option value="GM">Gambia</option>
+                    <option value="GE">Georgia</option>
+                    <option value="DE">Germany</option>
+                    <option value="GH">Ghana</option>
+                    <option value="GI">Gibraltar</option>
+                    <option value="GR">Greece</option>
+                    <option value="GL">Greenland</option>
+                    <option value="GD">Grenada</option>
+                    <option value="GP">Guadeloupe</option>
+                    <option value="GU">Guam</option>
+                    <option value="GT">Guatemala</option>
+                    <option value="GG">Guernsey</option>
+                    <option value="GN">Guinea</option>
+                    <option value="GW">Guinea-Bissau</option>
+                    <option value="GY">Guyana</option>
+                    <option value="HT">Haiti</option>
+                    <option value="HM">Heard Island and McDonald Islands</option>
+                    <option value="VA">Holy See (Vatican City State)</option>
+                    <option value="HN">Honduras</option>
+                    <option value="HK">Hong Kong</option>
+                    <option value="HU">Hungary</option>
+                    <option value="IS">Iceland</option>
+                    <option value="IN">India</option>
+                    <option value="ID">Indonesia</option>
+                    <option value="IR">Iran, Islamic Republic of</option>
+                    <option value="IQ">Iraq</option>
+                    <option value="IE">Ireland</option>
+                    <option value="IM">Isle of Man</option>
+                    <option value="IL">Israel</option>
+                    <option value="IT">Italy</option>
+                    <option value="JM">Jamaica</option>
+                    <option value="JP">Japan</option>
+                    <option value="JE">Jersey</option>
+                    <option value="JO">Jordan</option>
+                    <option value="KZ">Kazakhstan</option>
+                    <option value="KE">Kenya</option>
+                    <option value="KI">Kiribati</option>
+                    <option value="KP">Korea, Democratic People's Republic of</option>
+                    <option value="KR">Korea, Republic of</option>
+                    <option value="KW">Kuwait</option>
+                    <option value="KG">Kyrgyzstan</option>
+                    <option value="LA">Lao People's Democratic Republic</option>
+                    <option value="LV">Latvia</option>
+                    <option value="LB">Lebanon</option>
+                    <option value="LS">Lesotho</option>
+                    <option value="LR">Liberia</option>
+                    <option value="LY">Libyan Arab Jamahiriya</option>
+                    <option value="LI">Liechtenstein</option>
+                    <option value="LT">Lithuania</option>
+                    <option value="LU">Luxembourg</option>
+                    <option value="MO">Macao</option>
+                    <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
+                    <option value="MG">Madagascar</option>
+                    <option value="MW">Malawi</option>
+                    <option value="MY">Malaysia</option>
+                    <option value="MV">Maldives</option>
+                    <option value="ML">Mali</option>
+                    <option value="MT">Malta</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MQ">Martinique</option>
+                    <option value="MR">Mauritania</option>
+                    <option value="MU">Mauritius</option>
+                    <option value="YT">Mayotte</option>
+                    <option value="MX">Mexico</option>
+                    <option value="FM">Micronesia, Federated States of</option>
+                    <option value="MD">Moldova, Republic of</option>
+                    <option value="MC">Monaco</option>
+                    <option value="MN">Mongolia</option>
+                    <option value="ME">Montenegro</option>
+                    <option value="MS">Montserrat</option>
+                    <option value="MA">Morocco</option>
+                    <option value="MZ">Mozambique</option>
+                    <option value="MM">Myanmar</option>
+                    <option value="NA">Namibia</option>
+                    <option value="NR">Nauru</option>
+                    <option value="NP">Nepal</option>
+                    <option value="NL">Netherlands</option>
+                    <option value="AN">Netherlands Antilles</option>
+                    <option value="NC">New Caledonia</option>
+                    <option value="NZ">New Zealand</option>
+                    <option value="NI">Nicaragua</option>
+                    <option value="NE">Niger</option>
+                    <option value="NG">Nigeria</option>
+                    <option value="NU">Niue</option>
+                    <option value="NF">Norfolk Island</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="NO">Norway</option>
+                    <option value="OM">Oman</option>
+                    <option value="PK">Pakistan</option>
+                    <option value="PW">Palau</option>
+                    <option value="PS">Palestinian Territories</option>
+                    <option value="PA">Panama</option>
+                    <option value="PG">Papua New Guinea</option>
+                    <option value="PY">Paraguay</option>
+                    <option value="PE">Peru</option>
+                    <option value="PH">Philippines</option>
+                    <option value="PN">Pitcairn</option>
+                    <option value="PL">Poland</option>
+                    <option value="PT">Portugal</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="QA">Qatar</option>
+                    <option value="RE">Reunion</option>
+                    <option value="RO">Romania</option>
+                    <option value="RU">Russian Federation</option>
+                    <option value="RW">Rwanda</option>
+                    <option value="BL">Saint Barthelemy</option>
+                    <option value="SH">Saint Helena</option>
+                    <option value="KN">Saint Kitts and Nevis</option>
+                    <option value="LC">Saint Lucia</option>
+                    <option value="MF">Saint Martin</option>
+                    <option value="PM">Saint Pierre and Miquelon</option>
+                    <option value="VC">Saint Vincent and the Grenadines</option>
+                    <option value="WS">Samoa</option>
+                    <option value="SM">San Marino</option>
+                    <option value="ST">Sao Tome and Principe</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="SN">Senegal</option>
+                    <option value="RS">Serbia</option>
+                    <option value="SC">Seychelles</option>
+                    <option value="SL">Sierra Leone</option>
+                    <option value="SG">Singapore</option>
+                    <option value="SK">Slovakia</option>
+                    <option value="SI">Slovenia</option>
+                    <option value="SB">Solomon Islands</option>
+                    <option value="SO">Somalia</option>
+                    <option value="ZA">South Africa</option>
+                    <option value="GS">South Georgia and the South Sandwich Islands</option>
+                    <option value="ES">Spain</option>
+                    <option value="LK">Sri Lanka</option>
+                    <option value="SD">Sudan</option>
+                    <option value="SR">Suriname</option>
+                    <option value="SJ">Svalbard and Jan Mayen</option>
+                    <option value="SZ">Swaziland</option>
+                    <option value="SE">Sweden</option>
+                    <option value="CH">Switzerland</option>
+                    <option value="SY">Syrian Arab Republic</option>
+                    <option value="TW">Taiwan</option>
+                    <option value="TJ">Tajikistan</option>
+                    <option value="TZ">Tanzania, United Republic of</option>
+                    <option value="TH">Thailand</option>
+                    <option value="TL">Timor-Leste</option>
+                    <option value="TG">Togo</option>
+                    <option value="TK">Tokelau</option>
+                    <option value="TO">Tonga</option>
+                    <option value="TT">Trinidad and Tobago</option>
+                    <option value="TN">Tunisia</option>
+                    <option value="TR">Turkey</option>
+                    <option value="TM">Turkmenistan</option>
+                    <option value="TC">Turks and Caicos Islands</option>
+                    <option value="TV">Tuvalu</option>
+                    <option value="UG">Uganda</option>
+                    <option value="UA">Ukraine</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US" selected>United States</option>
+                    <option value="UM">United States Minor Outlying Islands</option>
+                    <option value="UY">Uruguay</option>
+                    <option value="UZ">Uzbekistan</option>
+                    <option value="VU">Vanuatu</option>
+                    <option value="VE">Venezuela, Bolivarian Republic of</option>
+                    <option value="VN">Viet Nam</option>
+                    <option value="VG">Virgin Islands, British</option>
+                    <option value="VI">Virgin Islands, U.S.</option>
+                    <option value="WF">Wallis and Futuna</option>
+                    <option value="EH">Western Sahara</option>
+                    <option value="YE">Yemen</option>
+                    <option value="ZM">Zambia</option>
+                    <option value="ZW">Zimbabwe</option>
+                </select>
+            </p>
+            <p class="mailing">
+                <label for="address_line_1">Address line 1<span class="Alert">*</span></label>
+                <input type="text" size="35" maxlength="80" name="address_line_1" value="" />
+            </p>
+            <p class="mailing">
+                <label for="address_line_2">Address line 2</label>
+                <input type="text" size="35" maxlength="80" name="address_line_2" value="" />
+            </p>
+            <p class="mailing">
+                <label for="city">City<span class="Alert">*</span></label>
+                <input type="text" size="35" maxlength="30" name="city" value="" />
+            </p>
+            <p class="mailing state" id="mailing_state">
+                <label for="state">State<span class="Alert">*</span></label>
+                <select name="state" size=1 title="State">
+                    <option value=""></option>
+                    <option value="XX">Outside the U.S.</option>
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AS">American Samoa</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="AA">Armed Forces Americas</option>
+                    <option value="AE">Armed Forces Europe</option>
+                    <option value="AP">Armed Forces Pacific</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District of Columbia</option>
+                    <option value="FM">F.S. Micronesia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="GU">Guam </option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MH">Marshall Islands</option>
+                    <option value="MD">Maryland</option>
+                    <option value="MA" selected>Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="MP">Northern Mariana Islands</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PW">Palau</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="PR">Puerto Rico</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VI">Virgin Islands</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
+            </p>
+            <p class="mailing province" id="mailing_province">
+                <label for="province">Province/Other</label>
+                <input type="text" size="35" maxlength=20 id="province" name="province" value="" />
+            </p>
+            <p class="mailing">
+                <label for="zip">ZIP/Postal code<span class="Alert">*</span></label>
+                <input type="text" size="35" maxlength=10 id="zip" name="zip" value="" onblur="return checkZip(this);" />
+            </p>
+            <p>
+                <label for="phone_number">Phone<span class="Alert">*</span></label>
+                <input type="tel" size="35" maxlength="20" name="phone_number" value="" onblur="this.value=phoneCheck(this.value);" />
+            </p>
+            <p>
+                <label for="company_name">Place of employment</label>
+                <input type="text" size="35" name="company_name" value="" />
+            </p>
+            <p><a href="#" target="_blank" onclick="window.open('http://www.jimmyfund.org/ways-to-give/giving/matching-gifts/');return false;">Click here</a> to see if your employer will match your gift.</p>
+            <p>
+                <input class="check" type="checkbox" name="Field6073274" value="Yes" /> My employer matches gifts. I will submit a request to my employer.</p>
+            <div class="next_button"><a href="javascript:void(0);" id="next_button_step_2"><img src="/atf/cf/{bad0bac1-71a2-430a-9152-e90b157d020a}/btn_next_tan.png" border="0"/></a></div>
+        </div>
+        <h3 class="form_title" id="form_step_title_3"><span class="padding">3. Payment Information</span></h3>
+        <div class="padding" id="form_step_3">
+            <p id="card-type">
+                <label for="CardType">Credit card type<span class="Alert">*</span></label>
+                <input class="radio" type="radio" name="CardTypeRadio" value="Visa" /> <img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_visa_32.png" border="0" id="card_visa" />
+                <input class="radio" type="radio" name="CardTypeRadio" value="MasterCard" /> <img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_mastercard_32.png" border="0" id="card_visa" />
+                <input class="radio" type="radio" name="CardTypeRadio" value="Discover" /> <img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_discover_32.png" border="0" id="card_visa" />
+                <input class="radio" type="radio" name="CardTypeRadio" value="American Express" /> <img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_amex_32.png" border="0" id="card_visa" />
+                <select style="display:none;" title="Credit Card Types" size="1" name="CardType">
+                    <option value="">Please Select</option>
+                    <option value="Visa">Visa</option>
+                    <option value="American Express">American Express</option>
+                    <option value="MasterCard">MasterCard</option>
+                    <option value="Discover">Discover</option>
+                </select>
+            </p>
+            <p>
+                <label for="CardName">Cardholder's name<span class="Alert">*</span></label>
+                <input type="text" size="35" maxlength=100 name="CardName" value="" id="CardName" />
+            </p>
+            <p>
+                <label for="CardNumber">Credit card number<span class="Alert">*</span></label>
+                <input type="text" size=20 maxlength=20 name="CardNumber" value="" id="CardNumber" />
+            </p>
+            <div class="form_row">
+                <div class="form_row_45">
+                    <label for="CardExpmn">Credit card expiration<span class="Alert">*</span></label>
+                    <select name="CardExpmn" size="1" id="CardExpmn" title="Credit Card Expiration Month">
+                        <option value="01" selected>01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select name="CardExpyr" size=1 id="CardExpyr" title="Credit Card Expiration Year">
+                        <option value="2016" selected="selected">2016</option>
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                        <option value="2025">2025</option>
+                        <option value="2026">2026</option>
+                        <option value="2027">2027</option>
+                        <option value="2028">2028</option>
+                    </select>
+                </div>
+                <div class="form_row_55">
+                    <label for="CardSecNumber" class="with_tooltip">CVV number<span class="Alert">*</span></label>
+                    <div class="tooltip_container_nott">
+                        <div class="HelpContainer"><a href="javascript:PopupCVV();"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/ICON-HELP-QUESTION.PNG" border="0" /></a></div>
+                    </div>
+                    <input type="text" size=8 maxlength=4 name="CardSecNumber" value="" id="CardSecNumber" />
+                </div>
+                <br style="clear:both;" />
+            </div>
+            <input type=hidden name="PaymentStatus" value="P" />
+            <input type=hidden name="PaymentType" value="CREDIT" id="PaymentType0" />
+            <script src="/CommonLib/lib/INC_jsCcValid1.js" Language="JavaScript"></script>
+            <p id="checkbox-holder">
+                <a id="mobile-checkbox" class="mailing-check selected" href="#"><img src="/atf/cf/{bf6d0318-22d5-4c7e-8a8b-d5e81c5670a6}/icon_check.png" border="0"/></a>
+                <input style="display:none;" checked="checked" type="checkbox" name="CheckAddress" value="on" onclick="ChangeAddress(form);" id="CheckAddress" />
+                <span class="addressText">Billing address is the same as contact address.</span>
+            </p>
+            <div id="billing_information_fields">
+                <p>
+                    <label for="BillAddress1">Billing address line 1<span class="Alert">*</span></label>
+                    <input type="text" size="35" maxlength=80 id="BillAddress1" name="BillAddress1" value="" />
+                </p>
+                <p>
+                    <label for="BillAddress2">Billing address line 2</label>
+                    <input type="text" size="35" maxlength=80 id="BillAddress2" name="BillAddress2" value="" />
+                </p>
+                <p>
+                    <label for="BillCity">City<span class="Alert">*</span></label>
+                    <input type="text" size="35" maxlength=30 id="BillCity" name="BillCity" value="" />
+                </p>
+                <div class="multi-field">
+                    <p id="address-state">
+                        <label for="BillState">State<span class="Alert">*</span></label>
+                        <select name="BillState" size=1 title="State">
+                            <option value=""></option>
+                            <option value="XX">Outside the U.S</option>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AS">American Samoa</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="AA">Armed Forces Americas</option>
+                            <option value="AE">Armed Forces Europe</option>
+                            <option value="AP">Armed Forces Pacific</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="FM">F.S. Micronesia</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="GU">Guam </option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MH">Marshall Islands</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA" selected>Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="MP">Northern Mariana Islands</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PW">Palau</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="PR">Puerto Rico</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VI">Virgin Islands</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </p>
+                    <p id="address-zip">
+                        <label for="BillZip">ZIP/Postal code<span class="Alert">*</span></label>
+                        <input type="text" id="BillZip" size="35" maxlength=10 name="BillZip" value="" onblur="return checkZip(this);" />
+                    </p>
+                </div>
+                <p id="bill-country">
+                    <label for="BillCountry">Country<span class="Alert">*</span></label>
+                    <select name="BillCountry" size=1 title="Country">
+                        <option value=""></option>
+                        <option value="CA">Canada</option>
+                        <option value="GB">United Kingdom</option>
+                        <option value="US" selected>United States</option>
+                    </select>
+                </p>
+                <p id="bill-province">
+                    <label for="BillProvince">Province</label>
+                    <input type="text" size="35" maxlength=20 id="BillProvince" name="BillProvince" value="" />
+                </p>
+            </div>
+            <p id="header_additional_info">Additional Information</p>
+            <div style="display:none;">
+                <input name="Field5848418" type="text" rel="I/we have included Dana-Farber in my/our will:" value="No" />
+                <input name="Field5848419" type="text" rel="I/we would like information about including Dana-Farber in my/our will:" value="No">
+            </div>
+            <p>
+                <input class="check floatleft" type="checkbox" name="will_include" value="Yes" id="will_include" />
+                <label for="will_include" class="checkbox_label"> I/We have included Dana-Farber in my/our will.</label>
+                <br style="clear:both;" />
+            </p>
+            <p>
+                <input class="check floatleft" type="checkbox" name="will_include_info" value="Yes" id="will_include_info" />
+                <label for="will_include_info" class="checkbox_label"> I/We would like information about including Dana-Farber in my/our will.</label>
+                <br style="clear:both;" />
+            </p>
+            <script type="text/javascript">
+            $("#will_include").click(function() {
+                if ($(this).is(':checked')) { $("input[name='Field5848418']").val('Yes'); } else { $("input[name='Field5848418']").val('No'); }
+            });
+            $("#will_include_info").click(function() {
+                if ($(this).is(':checked')) { $("input[name='Field5848419']").val('Yes'); } else { $("input[name='Field5848419']").val('No'); }
+            });
+            </script>
+            <p>
+                <label for="Field5099248">Why do you give?</label>
+                <textarea rows="5" cols="50" name="Field5099248" value="" id="Field5099248" /></textarea>
+            </p>
+            <!-- Begin CAPTCHA v2 -->
+            <table style="font-family:Arial;font-size:12px" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td align="center" valign="middle">
+                        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                        <div class="g-recaptcha" data-sitekey="6LcPHU8UAAAAABYxX2ssPY7OzRQA57zr3z5G_QAw"></div>
+                        <noscript>
+                            <div>
+                                <div style="width: 302px; height: 422px; position: relative;">
+                                    <div style="width: 302px; height: 422px; position: absolute;">
+                                        <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LcPHU8UAAAAABYxX2ssPY7OzRQA57zr3z5G_QAw" frameborder="0" scrolling="no" style="width: 302px; height:422px; border-style: none;">
+                                        </iframe>
+                                    </div>
+                                </div>
+                                <div style="width: 300px; height: 60px; border-style: none;
+                   bottom: 12px; left: 25px; margin: 0px; padding: 0px; right: 25px;
+                   background: #f9f9f9; border: 1px solid #c1c1c1; border-radius: 3px;">
+                                    <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1;
+                          margin: 10px 25px; padding: 0px; resize: none;">
+                                    </textarea>
+                                </div>
+                            </div>
+                        </noscript>
+                    </td>
+                </tr>
+            </table>
+            <!-- End CAPTCHA -->
+            <p id="processing-disclaimer">Please review your information above.
+                <br />
+                <br />By clicking "Give Now" your credit card will be processed. Please click only once—your transaction may take a few moments to process.</p>
+            <p id="give-now-button">
+                <a href="#" id="donate-submit">Give Now</a>
+                <input style="display:none;" type="button" name="SubmitButton" id="SubmitButton" value="Submit" class='HtmlButton' />
+                <span id="Processing"></span>
+            </p>
+        </div>
+    </div>
+</form>
+<script language="javascript">
+function ProfileFieldLock(thisform) {
+    //#171974 Terry 2012/04/08
+    if (thisform.FieldLock != null)
+        if (thisform.FieldLock.checked == true) {
+            if (thisform.first_name != null) {
+                //thisform.first_name.disabled = false;
+                thisform.first_name.readOnly = false;
+                thisform.first_name.style.color = "black";
+            }
+            if (thisform.last_name != null) {
+                //thisform.last_name.disabled = false;
+                thisform.last_name.readOnly = false;
+                thisform.last_name.style.color = "black";
+            }
+            if (thisform.email_address != null) {
+                //thisform.email_address.disabled = false;
+                thisform.email_address.readOnly = false;
+                thisform.email_address.style.color = "black";
+            }
+        }
+    else {
+        if (thisform.first_name != null) {
+            thisform.first_name.value = thisform.lock_first_name.value;
+            //   thisform.first_name.disabled = true;
+            thisform.first_name.readOnly = true;
+            thisform.first_name.style.color = "gray";
+        }
+        if (thisform.last_name != null) {
+            thisform.last_name.value = thisform.lock_last_name.value;
+            //   thisform.last_name.disabled = true;
+            thisform.last_name.readOnly = true;
+            thisform.last_name.style.color = "gray";
+        }
+        if (thisform.email_address != null) {
+            thisform.email_address.value = thisform.lock_email_address.value;
+            //   thisform.email_address.disabled = true;
+            thisform.email_address.readOnly = true;
+            thisform.email_address.style.color = "gray";
+        }
+    }
+    return true;
+}
+</script>
+<script language="javascript">
+$(".tooltip_container").tooltip({ tooltipcontentclass: "mycontent", position: { my: "left-30 center", at: "right center" } });
+
+function getPaymentType() {
+    var thisform
+    thisform = document.SUPPORTER1109950;
+    for (i = 0; i < thisform.elements['paymentTypeSelector'].options.length; i++) {
+        if (thisform.elements['paymentTypeSelector'].options[i].selected == true)
+            return thisform.elements['paymentTypeSelector'].options[i].value;
+    }
+}
+
+function ChangePay2() {
+    ChangePay(getPaymentType());
+}
+
+function ChangePay3() {
+    var paymentStatus
+    var thisform
+    thisform = document.SUPPORTER1109950;
+    for (i = 0; i < thisform.elements['PaymentStatusSelector'].options.length; i++) {
+        if (thisform.elements['PaymentStatusSelector'].options[i].selected == true)
+            paymentStatus = thisform.elements['PaymentStatusSelector'].options[i].value;
+    }
+    thisform.PaymentStatus.value = paymentStatus
+    if (paymentStatus == "H") {
+        thisform.PaymentType.value = "BILLME"
+    } else {
+        thisform.PaymentType.value = "CREDIT"
+    }
+    thisform.Reload.value = 'Y';
+    thisform.action = "https://www.kintera.org/site/apps/ka/sd/donorcustom.asp?c=**cindex**&b=**bindex**#Payment";
+    thisform.submit();
+}
+</script>
+<script language="JavaScript">
+//$('select').fancySelect();
+
+<!--
+history.go(1);
+formSetmain(document.SUPPORTER1109950);
+onunload = fileClose;
+
+var recurring_type = "N";
+
+function reloadForm() {
+    document.SUPPORTER1109950.Reload.value = 'Y';
+    document.SUPPORTER1109950.action = "https://www.kintera.org/site/apps/ka/sd/donorcustom.asp?c=**cindex**&b=**bindex**";
+    document.SUPPORTER1109950.submit();
+}
+
+function SubmitForm1109950(thisform) {
+    if (thisform.SubmitButton != null) thisform.SubmitButton.disabled = true;
+    if (thisform.RestartButton != null) thisform.RestartButton.disabled = true;
+    if (CheckForm1109950(thisform)) thisform.submit();
+    else {
+        if (thisform.SubmitButton != null) thisform.SubmitButton.disabled = false;
+        if (thisform.RestartButton != null) thisform.RestartButton.disabled = false;
+    }
+}
+
+function setAddressFields(thisform) {
+    if (thisform.address_line_1 != null) thisform.BillAddress1.value = thisform.address_line_1.value;
+    if (thisform.address_line_2 != null) thisform.BillAddress2.value = thisform.address_line_2.value;
+    if (thisform.city != null) thisform.BillCity.value = thisform.city.value;
+    if (thisform.province != null) thisform.BillProvince.value = thisform.province.value;
+    if (thisform.zip != null) thisform.BillZip.value = thisform.zip.value;
+    if (thisform.state != null) setSelectValue(thisform.BillState, thisform.state.value);
+    if (thisform.country != null) setSelectValue(thisform.BillCountry, thisform.country.value);
+}
+
+function CheckForm1109950(thisform) {
+    focus_field = "";
+    warning = "";
+
+    thisform.Amount.value = number_format(thisform.Amount.value, 2, '.', '');
+    var fieldamt = 0;
+    if (recurring_type == 'Y') {
+
+        thisform.RecurringAmount.value = jsDV_strTrim(thisform.RecurringAmount.value);
+        CheckAmount(thisform.RecurringAmount);
+        warning = checkField(thisform.RecurringAmount, "Amount", warning);
+        fieldamt = thisform.RecurringAmount.value;
+    } else {
+        thisform.Amount.value = jsDV_strTrim(thisform.Amount.value);
+        CheckAmount(thisform.Amount);
+        warning = checkField(thisform.Amount, "Amount", warning);
+        fieldamt = thisform.Amount.value;
+    }
+
+    if ($("#CheckAddress").is(':checked')) {
+        if (thisform.address_line_1 != null) thisform.BillAddress1.value = thisform.address_line_1.value;
+        if (thisform.address_line_2 != null) thisform.BillAddress2.value = thisform.address_line_2.value;
+        if (thisform.city != null) thisform.BillCity.value = thisform.city.value;
+        if (thisform.province != null) thisform.BillProvince.value = thisform.province.value;
+        if (thisform.zip != null) thisform.BillZip.value = thisform.zip.value;
+        if (thisform.state != null) setSelectValue(thisform.BillState, thisform.state.value);
+        if (thisform.country != null) setSelectValue(thisform.BillCountry, thisform.country.value);
+    }
+
+    warning = checkField(thisform.first_name, "First name", warning);
+    warning = checkField(thisform.last_name, "Last name", warning);
+    warning = checkField(thisform.email_address, "Email", warning);
+    warning = checkField(thisform.address_line_1, "Address line 1", warning);
+    warning = checkField(thisform.city, "City", warning);
+    warning = checkSelect(thisform.state, "State", warning);
+    warning = checkField(thisform.zip, "ZIP/Postal code", warning);
+    warning = checkField(thisform.phone_number, "Phone", warning);
+    warning = checkSelect(thisform.CardType, "Credit Card Type", warning);
+    warning = checkField(thisform.CardName, "Cardholder's name", warning);
+    warning = checkField(thisform.CardNumber, "Credit card number", warning);
+    warning = checkField(thisform.CardSecNumber, "CVV number", warning);
+    warning = checkField(thisform.BillAddress1, "Billing Address line 1", warning);
+    warning = checkField(thisform.BillCity, "Billing city", warning);
+    warning = checkField(thisform.BillZip, "Billing ZIP/Postal code", warning);
+    warning = checkSelect(thisform.BillCountry, "Billing ", warning);
+    //warning = checkField(thisform.g-recaptcha-response, "CAPTCHA ", warning);
+    if (warning != "") {
+        warning = "Please enter the following fields to continue:\n- " + warning + "";
+        alert(warning);
+        if (focus_field != "") focus_field.focus();
+        /*if ($('input[name="first_name"]').val() == "")
+            $('input[name="first_name"]').val("First");
+        if ($('input[name="last_name"]').val() == "")
+            $('input[name="last_name"]').val("Last");
+        if ($('input[name="middle_name"]').val() == ""){
+            $('input[name="middle_name"]').val("M");
+            $('input[name="middle_name"]').removeClass('populated');
+        }*/
+        return false;
+    }
+
+    if (thisform.email_address != null)
+        if (thisform.email_address.value != "")
+            if (validEmail(thisform.email_address.value) == false) {
+                thisform.email_address.focus();
+                return false;
+            }
+    if (thisform.email_address_1 != null)
+        if (thisform.email_address_1.value != "")
+            if (validEmail(thisform.email_address_1.value, "You have entered an invalid email address.") == false) {
+                thisform.email_address_1.focus();
+                return false;
+            }
+    if (thisform.email_address_2 != null)
+        if (thisform.email_address_2.value != "")
+            if (validEmail(thisform.email_address_2.value, "You have entered an invalid email address.") == false) {
+                thisform.email_address_2.focus();
+                return false;
+            }
+    if ((thisform.zip != null) && (thisform.country != null))
+        if (checkCountryZip(thisform.zip, thisform.country) == false) {
+            thisform.zip.focus();
+            return false;
+        }
+
+    if (!ccTypeValid(thisform.CardNumber, thisform.CardType)) {
+        alert("Your credit card number is invalid - please reenter");
+        thisform.CardNumber.focus();
+        return false;
+    }
+    if (!((null == thisform.CardSecNumber) || ("undefined" == typeof(thisform.CardSecNumber)))) {
+        if (!ccCVVCheck(thisform.CardSecNumber.value)) {
+            alert("Your CVV number is invalid - please reenter");
+            thisform.CardSecNumber.focus();
+            return false;
+        }
+    }
+    for (i = 0; i < thisform.CardExpyr.options.length; i++)
+        if (thisform.CardExpyr.options[i].selected) expyear = thisform.CardExpyr.options[i].value;
+    for (i = 0; i < thisform.CardExpmn.options.length; i++)
+        if (thisform.CardExpmn.options[i].selected) expmonth = thisform.CardExpmn.options[i].value;
+    var currentYear = (new Date).getFullYear();
+    var currentMonth = (new Date).getMonth() + 1;
+    if ((expyear < currentYear) || (expyear == currentYear && expmonth < currentMonth)) {
+        thisform.CardExpmn.focus();
+        alert("Your credit card is expired - please reenter");
+        return false;
+    }
+
+    if ((thisform.BillZip != null) && (thisform.BillCountry != null))
+        if (checkCountryZip(thisform.BillZip, thisform.BillCountry) == false) {
+            //alert("Please enter a valid zip code");
+            thisform.BillZip.focus();
+            return false;
+        }
+
+
+    // Populate hidden fields for confirmation
+    $("input[name='Field6077627']").val(fieldamt); // Last Gift Amount
+    if ($("input[name='BillingScheduleID']:checked").size() > 0) {
+        $("input[name='Field6077668']").val($("input[name='BillingScheduleID']:checked").attr('rel')); // Last Gift Frequency
+    } else {
+        $("input[name='Field6077668']").val('One-time'); // Last Gift Frequency
+    }
+    $("input[name='Field6077628']").val($("ul#designationDD li[rel='" + $("input#BeneficiaryID").val() + "']").text()); // Last Gift Direction
+    $("input[name='Field6077634']").val($("input[name='Field3074905']:checked").val()); // Last Gift Honor/Memory
+    $("input[name='Field6078013']").val($("input[name='Field3074920']").val()); // Last Gift Honor/Memory Name
+    $("input[name='Field6077635']").val($("input[name='Field3074906']").val()); // Last Gift Notify Name
+    $("input[name='Field6077636']").val($("input[name='Field3074908']").val()); // Last Gift Notify Address 1
+    //$("input[name='Field6077637']").val( $("input[name='']").val() ); // Last Gift Notify Address 2
+    $("input[name='Field6077638']").val($("input[name='Field3074910']").val()); // Last Gift Notify City
+    $("input[name='Field6077639']").val($("select[name='Field3074929'] option:selected").val()); // Last Gift Notify State
+    //$("input[name='Field6077646']").val( $("input[name='']").val() ); // Last Gift Notify Province
+    //$("input[name='Field6077640']").val( $("input[name='']").val() ); // Last Gift Notify Country
+    $("input[name='Field6077641']").val($("input[name='Field3074912']").val()); // Last Gift Notify Zip/Postal Code
+
+
+    thisform.action = "https://www.kintera.org/site/apps/ka/sd/donateprocess.asp?c=**cindex**&b=**bindex**&targetURL=**targetURL**";
+    if (document.all) //IE
+        document.all["Processing"].innerHTML = "<font  class='Alert' ><i><br><br></i></font>";
+    else if (!document.all && document.getElementById) //NN6
+        document.getElementById("Processing").innerHTML = "<font  class='Alert' ><i><br><br></i></font>";
+    return true;
+}
+
+function CountTotal(ptrAmt, ptrNum, ptrTotal) {
+    var thisform, numGift, i, j;
+    thisform = document.SUPPORTER1109950;
+    CheckAmount(ptrAmt);
+    for (i = 0; i < ptrNum.length; i++)
+        if (ptrNum[i].selected) numGift = Math.round(ptrNum.options[i].value) + 1;
+    ptrTotal.value = ptrAmt.value * numGift;
+
+}
+
+function CountTerm(ptrAmt, ptrNum, ptrTotal) {
+    var numGift;
+    CheckAmount(ptrAmt);
+    for (var i = 0; i < ptrNum.length; i++)
+        if (ptrNum[i].selected) numGift = Math.round(ptrNum.options[i].value) + 1;
+    ptrAmt.value = ptrTotal.value / numGift;
+}
+
+function SetAmount(thisform, amt) {
+    if (recurring_type == 'Y') {
+
+    } else thisform.Amount.value = amt;
+}
+
+function CheckAmtLevel(thisform, pointer) {
+    var i, j;
+    CheckAmount(pointer);
+
+    return false;
+}
+
+function CheckAmount(pointer) {
+    var returnValue, amountValue;
+    for (i = 0; i <= pointer.value.length - 1; i++);
+    pointer.value = pointer.value.replace(",", "");
+    amountValue = jsDV_strTrim(pointer.value);
+    if (amountValue != "") {
+        returnValue = jsDV_isValidMoney(amountValue);
+        if (returnValue == "-1") {
+            alert("Please enter a valid amount");
+            pointer.value = "";
+            pointer.focus();
+            return false;
+        } else pointer.value = returnValue;
+
+        if (amountValue < 5) {
+            alert("Please enter a minimum donation amount of $5");
+            pointer.value = "";
+            //pointer.focus();
+            return false;
+        }
+        if (amountValue > 2147483648) {
+            alert("Please enter a maximum donation amount of $2,147,483,648");
+            pointer.value = "";
+            pointer.focus();
+            return false;
+        }
+    }
+}
+
+function ChangeName(thisform) {
+    thisform.CardName.value = thisform.FirstName.value + " " + thisform.LastName.value;
+    return true;
+}
+
+function ChangeAddress(thisform) {
+    if (thisform.CheckAddress.value == "on") {
+        if (thisform.address_line_1 != null) thisform.BillAddress1.value = thisform.address_line_1.value;
+        if (thisform.address_line_2 != null) thisform.BillAddress2.value = thisform.address_line_2.value;
+        if (thisform.city != null) thisform.BillCity.value = thisform.city.value;
+        if (thisform.province != null) thisform.BillProvince.value = thisform.province.value;
+        if (thisform.zip != null) thisform.BillZip.value = thisform.zip.value;
+        if (thisform.state != null) setSelectValue(thisform.BillState, thisform.state.value);
+        if (thisform.country != null) setSelectValue(thisform.BillCountry, thisform.country.value);
+        thisform.CheckAddress.value = "off";
+    } else {
+        thisform.BillAddress1.value = "";
+        thisform.BillAddress2.value = "";
+        thisform.BillCity.value = "";
+        thisform.BillProvince.value = "";
+        thisform.BillZip.value = "";
+        setSelectValue(thisform.BillState, "");
+        setSelectValue(thisform.BillCountry, "");
+        thisform.CheckAddress.value = "on";
+    }
+    return true;
+}
+
+function CheckRecurring(thisform, thetype) {
+    var check_paypal_option = false;
+    if (thisform.EventPaymentTypes != null)
+        if (thisform.EventPaymentTypes.value.indexOf("PAYPAL") >= 0)
+            if (thisform.paymentTypeSelector != null) check_paypal_option = true;
+    recurring_type = thetype;
+    if (recurring_type == 'Y') {
+
+        //thisform.Amount.disabled=true;
+        if (thisform.RecurringAmount != null) thisform.RecurringAmount.disabled = false;
+        if (thisform.BillingScheduleID != null) thisform.BillingScheduleID.disabled = false;
+        if (thisform.NumberOfPayments != null) thisform.NumberOfPayments.disabled = false;
+        if (thisform.BillingScheduleID.value == "0") {
+            if (thisform.Amount1 != null) thisform.Amount1.disabled = false;
+
+        }
+        if (check_paypal_option) DisablePayPal(thisform);
+    } else {
+
+        //thisform.Amount.disabled=false;
+        if (thisform.RecurringAmount != null) thisform.RecurringAmount.disabled = true;
+        if (thisform.BillingScheduleID != null) thisform.BillingScheduleID.disabled = true;
+        if (thisform.NumberOfPayments != null) thisform.NumberOfPayments.disabled = true;
+        if (check_paypal_option) EnablePayPal(thisform);
+    }
+}
+
+function EnablePayPal(thisform) {
+    var payList = thisform.paymentTypeSelector;
+    var paylen = payList.length;
+    var found_paypal = false;
+    for (var i = 0; i < paylen; i++)
+        if (payList.options[i].value == "PAYPAL") found_paypal = true;
+    if (!found_paypal)
+        payList.options[paylen] = new Option("PayPal", "PAYPAL");
+}
+
+function DisablePayPal(thisform) {
+    var payList = thisform.paymentTypeSelector;
+    var paylen = payList.length;
+    var found_paypal = false;
+    for (var i = 0; i < paylen; i++)
+        if (payList.options[i].value == "PAYPAL") payList.options[i] = null;
+
+}
+
+function toggleUKTaxpayerStatus(checkedVal) {
+    var declareGiftRadio;
+    if (document.getElementById("Declare_Gift_Aid") == "undefined")
+        return false;
+    if (document.getElementById("Declare_Gift_Aid") == null)
+        return false;
+    declareGiftRadio = document.getElementsByName("Declare_Gift_Aid");
+    if (checkedVal == "Y") {
+        declareGiftRadio[0].checked = true;
+        declareGiftRadio[0].disabled = false;
+        declareGiftRadio[1].disabled = false;
+    } else {
+        declareGiftRadio[1].checked = true;
+        declareGiftRadio[0].disabled = true;
+        declareGiftRadio[1].disabled = true;
+    }
+    return false;
+}
+var c;
+
+function PopupCVV() {
+    c = window.open('/CommonLib/Field/cvv.htm', 'file', 'scrollbars=yes,resizable=yes,width=640,height=480,left=100,top=100');
+    c.focus();
+}
+
+function CloseCVV() {
+    if (c) {
+        if (!c.closed) c.close();
+        c = null;
+    }
+}
+window.onfocus = CloseCVV;
+
+function number_format(number, decimals, dec_point, thousands_sep) {
+    number = (number + '')
+        .replace(/[^0-9+\-Ee.]/g, '');
+    var n = !isFinite(+number) ? 0 : +number,
+        prec = !isFinite(+decimals) ? 0 : Math.abs(decimals),
+        sep = (typeof thousands_sep === 'undefined') ? ',' : thousands_sep,
+        dec = (typeof dec_point === 'undefined') ? '.' : dec_point,
+        s = '',
+        toFixedFix = function(n, prec) {
+            var k = Math.pow(10, prec);
+            return '' + Math.round(n * k) / k;
+        };
+    // Fix for IE parseFloat(0.55).toFixed(0) = 0;
+    s = (prec ? toFixedFix(n, prec) : '' + Math.round(n))
+        .split('.');
+    if (s[0].length > 3) {
+        s[0] = s[0].replace(/\B(?=(?:\d{3})+(?!\d))/g, sep);
+    }
+    if ((s[1] || '')
+        .length < prec) {
+        s[1] = s[1] || '';
+        s[1] += new Array(prec - s[1].length + 1)
+            .join('0');
+    }
+    return s.join(dec);
+}
+
+
+$(document).ready(function() {
+
+    // add tabindexes for all inputs,selects, etc
+    $("#customDonation :input").each(function(n) {
+        var c = n + 1;
+        $(this).attr('tabindex', c);
+    });
+    $("#customDonation :input,#customDonation a#mobile-checkbox-recurring").click(function() {
+        if ($(this).attr('id') != "RecurringOptionY" && $(this).attr('id') != "RecurringOptionN") {
+            var index = $(this).closest('div.padding').index('div.padding');
+            $("#form_left li").removeClass('selected');
+            $("#form_left li:eq(" + index + ")").addClass('selected');
+            scroll_left_list($(this).closest('div.padding').prev(), false);
+        }
+    });
+
+    $("#Amount").focus(function() {
+        $("#amount-boxes a").removeClass('selected');
+        if ($(this).val() <= 0 || $(this).val() == "Other") {
+            $(this).val('');
+        }
+    });
+    $("#Amount").blur(function() {
+        if ($(this).val() == '')
+            $(this).val("Other");
+        else if ($(this).val().indexOf('.') == -1 || $(this).val().indexOf('.00') > 0)
+            $(this).val(Number($(this).val()));
+        else
+            $(this).val(Number($(this).val()).toFixed(2));
+    });
+
+    $("#amount-boxes a").click(function() {
+        var thisamt = $(this).parent().attr('rel');
+        $("#Amount").val(Number(thisamt));
+        $("#amount-boxes a").removeClass('selected');
+        $(this).addClass('selected');
+    });
+
+    $('select[name="BillCountry"]').on('change', function(e) {
+        if ($(this).val() == "CA") {
+            $('select[name="BillState"]').val("XX");
+            $('p#address-state .fancy-select .trigger').text("Not in the US");
+            $('#customDonation p#bill-province').css('display', 'block');
+        } else if ($(this).val() == "GB")
+            $('p#address-state .fancy-select .trigger').text("Not in the US");
+        else
+            $('#customDonation p#bill-province').css('display', 'none');
+    });
+
+    /*
+        $('input[name="first_name"]').focus(function(){
+            if ($(this).val() == "First"){
+                $(this).val("");
+                $(this).addClass('populated');
+            }
+        }).blur(function(){
+            if ($(this).val() == ""){
+                $(this).val("First");
+                $(this).removeClass('populated');
+            }
+        });
+
+        $('input[name="last_name"]').focus(function(){
+            if ($(this).val() == "Last"){
+                $(this).val("");
+                $(this).addClass('populated');
+            }
+        }).blur(function(){
+            if ($(this).val() == ""){
+                $(this).val("Last");
+                $(this).removeClass('populated');
+            }
+        });
+        
+        $('input[name="middle_name"]').focus(function(){
+            if ($(this).val() == "M"){
+                $(this).val("");
+                $(this).addClass('populated');
+            }
+        }).blur(function(){
+            if ($(this).val() == ""){
+                $(this).val("M");
+                $(this).removeClass('populated');
+            }
+        });
+    */
+
+
+    $("#check_freq").click(function() {
+        if ($(this).is(':checked')) {
+            $("input[name='RecurringOption'][value='Y']").click();
+            $("input[name='RecurringAmount']").val($("input[name='Amount']").val());
+        } else {
+            $("input[name='RecurringOption'][value='N']").click();
+        }
+    });
+
+    $('#mobile-checkbox-recurring.mailing-check').click(function() {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            $("input[name='check_freq']").attr('checked', false);
+            $("input[name='RecurringOption'][value='N']").click();
+            $("#recurring_options").hide();
+            $("input[name='BillingScheduleID']").attr('checked', false);
+        } else {
+            $(this).addClass('selected');
+            $("input[name='check_freq']").attr('checked', true);
+            $("input[name='RecurringOption'][value='Y']").click();
+            $("input[name='RecurringAmount']").val($("input[name='Amount']").val());
+            $("#recurring_options").show();
+        }
+        return false;
+    });
+
+    $('#mobile-checkbox.mailing-check').click(function() {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+            $("input[name='CheckAddress']").attr('checked', false);
+            ChangeAddress(document.getElementById('customDonation'));
+            $("#billing_information_fields").show();
+            $("#billing_information_fields input").val('');
+            $("#billing_information_fields select option:first").attr('selected', true);
+        } else {
+            $(this).addClass('selected');
+            $("input[name='CheckAddress']").attr('checked', true);
+            ChangeAddress(document.getElementById('customDonation'));
+            $("#billing_information_fields").hide();
+            setAddressFields(document.getElementById('customDonation'));
+        }
+        return false;
+    });
+
+    /* 
+        UNCOMMENT THIS FOR MOBILE....
+        $('#mobile-checkbox.mailing-check,#mobile-checkbox-recurring.mailing-check').click(function(){
+            $(this).trigger('touchstart');
+            return false;
+        });
+        
+        
+        // make the pseudo-checkbox behave more like an app (no 'click' lag)
+        $('#mobile-checkbox.mailing-check').on('touchstart', function(){
+
+            if ($(this).hasClass('selected')){
+                // close mailing address section
+                $(this).removeClass('selected');
+                $('#CheckAddress').prop('checked', false);
+                $('p.mailing, #mailing-address-header').css('display', 'none');
+            } else {
+                // open mailing address section
+                $(this).addClass('selected');
+                $('#CheckAddress').prop('checked', true);
+                $('p.mailing, #mailing-address-header').css('display','inline-block');
+                // make mailing address fields ready for input
+                $('#customDonation p.mailing input[type="text"]').val("");
+                $('#customDonation p.mailing select').val("");
+            }
+            
+            return false;
+        });
+        
+        $('#mobile-checkbox-recurring.mailing-check').on('touchstart', function(){
+            if ($(this).hasClass('selected')){
+                $(this).removeClass('selected');
+                $("input[name='check_freq']").attr('checked',true);
+                $("input[name='RecurringOption'][value='N']").click();
+            } else {
+                $(this).addClass('selected');
+                $("input[name='check_freq']").attr('checked',false);
+                $("input[name='RecurringOption'][value='Y']").click();
+                $("input[name='RecurringAmount']").val( $("input[name='Amount']").val() );
+            }
+            return false;
+        });
+        
+    */
+
+    $("input[name='Field3074905'][value='No']").click(function() {
+        $("label[for='Field3074920'],#honortype_tooltip").text('In memory of');
+        $("#tribute_address_text").text('Most recent address, if known');
+        $("#honortype_tooltip_content").text('Please enter the first and last name of the person you are memorializing.');
+        $("#tribute_fields").hide();
+        $("#tribute_fields input").val('');
+    });
+    $("input[name='Field3074905'][value='In memory of']").click(function() {
+        $("label[for='Field3074920'],#honortype_tooltip").text('In memory of');
+        $("#tribute_address_text").text('Most recent address, if known');
+        $("#honortype_tooltip_content").text('Please enter the first and last name of the person you are memorializing.');
+        $("#tribute_fields,#mra_tooltip_icon").show();
+    });
+    $("input[name='Field3074905'][value='In honor of']").click(function() {
+        $("label[for='Field3074920'],#honortype_tooltip").text('In honor of');
+        $("#tribute_address_text").text('Address, if known');
+        $("#honortype_tooltip_content").text('Please enter the first and last name of the person you are honoring.');
+        $("#tribute_fields").show();
+        $("#mra_tooltip_icon").hide();
+    });
+
+    $("input[name='reenter_email']").blur(function() {
+        if ($(this).val() != $("input[name='email_address']").val()) {
+            $("#email_match_text").show();
+        } else {
+            $("#email_match_text").hide();
+        }
+    });
+
+    $("select[name='country']").change(function() {
+        if ($("option:selected", this).val() != "US") {
+            $("p#mailing_state").hide();
+            $("p#mailing_province").show();
+            $("select[name='state'] option[value='XX']").attr('selected', true);
+        } else {
+            $("p#mailing_state").show();
+            $("p#mailing_province").hide();
+            $("select[name='state'] option[value='']").attr('selected', true);
+        }
+    });
+
+    $("input[name='CardTypeRadio']").click(function() {
+        var thisval = $(this).val();
+        $("select[name='CardType'] option[value='" + thisval + "']").prop('selected', true);
+    });
+
+    $('#donate-submit').click(function() {
+        // check that the name fields are not their default values
+        //  if so, clear them out so they throw form errors
+        if ($('input[name="first_name"]').val() == "First")
+            $('input[name="first_name"]').val("");
+        if ($('input[name="last_name"]').val() == "Last")
+            $('input[name="last_name"]').val("");
+        if ($('input[name="middle_name"]').val() == "M" && !$('input[name="middle_name"]').hasClass('populated'))
+            $('input[name="middle_name"]').val("");
+        // check if billing info needs to be copied to mailing info before submitting form
+        // by seeing if the checkbox is checked or not
+        if (!$('#mobile-checkbox.mailing-check').hasClass('selected')) {
+            $('#customDonation p.mailing input[name="address_line_1"]').val($('input#BillAddress1').val());
+            $('#customDonation p.mailing input[name="address_line_2"]').val($('input#BillAddress2').val());
+            $('#customDonation p.mailing input[name="city"]').val($('input#BillCity').val());
+            $('#customDonation p.mailing input[name="province"]').val($('input#BillProvince').val());
+            $('#customDonation p.mailing input[name="zip"]').val($('input#BillZip').val());
+            $('#customDonation p.mailing select[name="state"]').val($('select[name="BillState"]').val());
+            $('#customDonation p.mailing select[name="country"]').val($('select[name="BillCountry"]').val());
+            $('#customDonation p.mailing.state .fancy-select .trigger').text($('p#address-state .fancy-select .trigger').text());
+            $('#customDonation p.mailing.country .fancy-select .trigger').text($('p#bill-country .fancy-select .trigger').text());
+        }
+        $('#customDonation').submit();
+        return false;
+    });
+
+
+    function scroll_left_list(el, scrollWindow) {
+        $("#form_left").css('height', $("#donation_form_mobile").height() + 'px');
+        var newtop = el.offset().top - ($("#header").outerHeight(true) + $("#primaryNav").outerHeight(true) + $("#form_left h2").outerHeight(true));
+        if (newtop < 0) {
+            newtop = 0;
+        }
+
+        if ($(el).index('.form_title') == "0") {
+            newtop = 0;
+        } else if ($(el).index('.form_title') == "1") {
+            newtop = newtop - 162;
+        } else if ($(el).index('.form_title') == "2") {
+            newtop = newtop - 188;
+        }
+
+        $("#form_left ul").animate({ top: newtop });
+        if (scrollWindow != false) {
+            $.scrollTo($(el), 800);
+        }
+    }
+
+    $("#form_left ul li").click(function() {
+        var index = $(this).index('#form_left ul li');
+        $("#form_left ul li").removeClass('selected');
+        $(this).addClass('selected');
+        $("h3.form_title:eq(" + index + ")").next().show();
+        scroll_left_list($("h3.form_title:eq(" + index + ")"), true);
+    });
+
+
+    $("#form_step_title_1").click(function() {
+        $("#form_step_1").show();
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(0)").addClass('selected');
+        scroll_left_list($(this), true);
+    });
+
+    $("#next_button_step_1").click(function() {
+        $("#form_step_2").show();
+        $("#form_step_title_2").addClass('active');
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(1)").addClass('selected');
+        scroll_left_list($("#form_step_title_2"), true);
+    });
+    $("#form_step_title_2").click(function() {
+        $("#form_step_2").show();
+        $(this).addClass('active');
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(1)").addClass('selected');
+        scroll_left_list($(this), true);
+    });
+
+    $("#next_button_step_2").click(function() {
+        $("#form_step_3").show();
+        $("#form_step_title_3").addClass('active');
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(2)").addClass('selected');
+        scroll_left_list($("#form_step_title_3"), true);
+    });
+    $("#form_step_title_3").click(function() {
+        $("#form_step_3").show();
+        $(this).addClass('active');
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(2)").addClass('selected');
+        scroll_left_list($(this), true);
+    });
+    $("#form_step_title_4").click(function() {
+        $("#form_step_4").show();
+        $(this).addClass('active');
+        $("#form_left li").removeClass('selected');
+        $("#form_left li:eq(3)").addClass('selected');
+        scroll_left_list($(this), true);
+    });
+
+});
+//-->
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#BeneficiaryID").mcDropdown("#designationDD", { leftAdjust: 0, showACOnEmptyFocus: true });
+});
+</script>
