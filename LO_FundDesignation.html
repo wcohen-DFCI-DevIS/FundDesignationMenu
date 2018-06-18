@@ -7,8 +7,14 @@
 
 <!-- Dropdown Functionality -->
 <script>
+  function pickFund () {
+      alert("Fund Selected!");
+  };
+
   $('document').ready(function(){
       $('.designated-giving-selection-container').hide();
+      $(".designated-program-label").hide();
+      $(".fund").click(pickFund());
   });
   
 
@@ -23,6 +29,9 @@
     .submenu {
         visibility: hidden;
         background-color: bisque;
+    }
+    .fundGroup{
+        font-style: italic;
     }
     li {
         display: block;
@@ -63,95 +72,95 @@
 <!-- Dropdown Menu -->
 <div class="menucontainer">
     <ul class="mcdropdown_menu" id="designationDD1">
-        <li rel="10507">Area of greatest need</li>
-        <li rel="352590">Family Wishes</li>
-        <li rel="375492">Basic Research</li>
-        <li rel="10561">Cancer Prevention</li>
-        <li rel="920579">Drug Development</li>
-        <li rel="1">Gastrointestinal Cancers
+        <li class="fund">Area of greatest need</li>
+        <li class="fund">Family Wishes</li>
+        <li class="fund">Basic Research</li>
+        <li class="fund">Cancer Prevention</li>
+        <li class="fund">Drug Development</li>
+        <li class="fundGroup">Gastrointestinal Cancers
             <ul class="submenu">
-                <li rel="10565">Colon Cancer</li>
-                <li rel="369981">Colorectal Cancer</li>
-                <li rel="916427">Esophageal Cancer</li>
-                <li rel="920431">Neuroendocrine Tumor</li>
-                <li rel="380898">Pancreatic Cancer</li>
-                <li rel="369979">Stomach &amp; Gastric Cancers</li>
+                <li class="fund">Colon Cancer</li>
+                <li class="fund">Colorectal Cancer</li>
+                <li class="fund">Esophageal Cancer</li>
+                <li class="fund">Neuroendocrine Tumor</li>
+                <li class="fund">Pancreatic Cancer</li>
+                <li class="fund">Stomach &amp; Gastric Cancers</li>
             </ul>
         </li>
-        <li rel="2">Genitourinary (Urinary/Men's
+        <li class="fundGroup">Genitourinary (Urinary/Men's
             <br /> Reproductive) Cancers
             <ul class="submenu">
-                <li rel="369983">Bladder Cancer</li>
-                <li rel="369985">Kidney Cancer</li>
-                <li rel="10562">Prostate Cancer</li>
+                <li class="fund">Bladder Cancer</li>
+                <li class="fund">Kidney Cancer</li>
+                <li class="fund">Prostate Cancer</li>
             </ul>
         </li>
-        <li rel="915155">Global Cancer Medicine</li>
-        <li rel="370012">Head and Neck Cancers</li>
-        <li rel="4">Hematologic (Blood) Cancers
+        <li class="fund">Global Cancer Medicine</li>
+        <li class="fund">Head and Neck Cancers</li>
+        <li class="fundGroup">Hematologic (Blood) Cancers
             <ul class="submenu">
-                <li rel="910528">Greatest need</li>
-                <li rel="369998">Leukemia - Adult</li>
-                <li rel="370000">Lymphoma - Adult</li>
-                <li rel="920581">Leukemia and Lymphoma - Pediatric</li>
-                <li rel="370002">Multiple Myeloma</li>
-                <li rel="370004">Non-Hodgkins Lymphoma</li>
-                <li rel="369993">Waldenstrom's Macroglobulinemia</li>
+                <li class="fund">Greatest need</li>
+                <li class="fund">Leukemia - Adult</li>
+                <li class="fund">Lymphoma - Adult</li>
+                <li class="fund">Leukemia and Lymphoma - Pediatric</li>
+                <li class="fund">Multiple Myeloma</li>
+                <li class="fund">Non-Hodgkins Lymphoma</li>
+                <li class="fund">Waldenstrom's Macroglobulinemia</li>
             </ul>
         </li>
-        <li rel="913048">Immunology</li>
-        <li rel="10563">Lung Cancer</li>
-        <li rel="358715">Melanoma</li>
+        <li class="fund">Immunology</li>
+        <li class="fund">Lung Cancer</li>
+        <li class="fund">Melanoma</li>
     </ul>
 </div>
 <div class="menucontainer">
     <ul class="mcdropdown_menu" id="designationDD2">    
-        <li rel="370021">Neuroblastoma</li>
-        <li rel="5">Neurological Cancers
+        <li class="fund">Neuroblastoma</li>
+        <li class="fundGroup">Neurological Cancers
             <ul class="submenu">
-                <li rel="377394">Brain Tumor — Adult</li>
-                <li rel="377404">Brain Tumor — Pediatric</li>
+                <li class="fund">Brain Tumor — Adult</li>
+                <li class="fund">Brain Tumor — Pediatric</li>
             </ul>
         </li>
-        <li rel="377402">Nursing</li>
-        <li rel="6">Patient Assistance
+        <li class="fund">Nursing</li>
+        <li class="fundGroup">Patient Assistance
             <ul class="submenu">
-                <li rel="377396">Patient Assistance — Adult</li>
-                <li rel="377406">Patient Assistance — Pediatric</li>
+                <li class="fund">Patient Assistance — Adult</li>
+                <li class="fund">Patient Assistance — Pediatric</li>
             </ul>
         </li>
-        <li rel="10560">Pediatric Oncology</li>
-        <li rel="903461"><em>Profile</em> Genetics Analysis</li>
-        <li rel="916425">Psychosocial Oncology &amp;
+        <li class="fund">Pediatric Oncology</li>
+        <li class="fund"><em>Profile</em> Genetics Analysis</li>
+        <li class="fund">Psychosocial Oncology &amp;
             <br /> Palliative Care</li>
-        <li rel="920583">Radiation Oncology</li>
-        <li rel="10">Sarcoma and Bone Cancers
+        <li class="fund">Radiation Oncology</li>
+        <li class="fundGroup">Sarcoma and Bone Cancers
             <ul class="submenu">
-                <li rel="370033">Sarcoma and Bone Cancers — Adult</li>
-                <li rel="920585">Sarcoma and Bone Cancers — Pediatric</li>
+                <li class="fund">Sarcoma and Bone Cancers — Adult</li>
+                <li class="fund">Sarcoma and Bone Cancers — Pediatric</li>
             </ul>
         </li>
-        <li rel="11">Stem Cell Transplant
+        <li class="fundGroup">Stem Cell Transplant
             <ul class="submenu">
-                <li rel="377400">Stem Cell Transplant — Adult</li>
-                <li rel="920587">Stem Cell Transplant — Pediatric</li>
+                <li class="fund">Stem Cell Transplant — Adult</li>
+                <li class="fund">Stem Cell Transplant — Pediatric</li>
             </ul>
         </li>
-        <li rel="7">Survivorship
+        <li class="fundGroup">Survivorship
             <ul class="submenu">
-                <li rel="377398">Survivorship — Adult</li>
-                <li rel="377408">Survivorship — Pediatric</li>
+                <li class="fund">Survivorship — Adult</li>
+                <li class="fund">Survivorship — Pediatric</li>
             </ul>
         </li>
-        <li rel="9">Women's Cancers
+        <li class="fundGroup">Women's Cancers
             <ul class="submenu">
-                <li rel="352801">Greatest need</li>
-                <li rel="10559">Breast Cancer</li>
-                <li rel="370041">Gynecologic Cancer</li>
-                <li rel="370039">Ovarian Cancer</li>
+                <li class="fund">Greatest need</li>
+                <li class="fund">Breast Cancer</li>
+                <li class="fund">Gynecologic Cancer</li>
+                <li class="fund">Ovarian Cancer</li>
             </ul>
         </li>
-        <li rel="386211">Zakim Center for Integrative
+        <li class="fund">Zakim Center for Integrative
             <br /> Therapies
         </li>
     </ul>
