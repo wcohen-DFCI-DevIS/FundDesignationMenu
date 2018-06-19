@@ -1,26 +1,3 @@
-<!-- JQUERY LIBRARY -->
-<script
-  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
-  crossorigin="anonymous">
-</script>
-
-<!-- Dropdown Functionality -->
-<script>
-  function pickFund () {
-      alert("Fund Selected!");
-  };
-
-  $('document').ready(function(){
-      $('.designated-giving-selection-container').hide();
-      $(".designated-program-label").hide();
-      $(".fund").click(pickFund());
-  });
-  
-
-</script>
-
-<!-- Dropdown Styling -->
 <style>
     .menucontainer {
         display: inline-block;
@@ -30,8 +7,14 @@
         visibility: hidden;
         background-color: bisque;
     }
+    .fund:hover {
+        background-color: lightgray;
+    }
     .fundGroup{
         font-style: italic;
+    }
+    .selected {
+        background-color: lightslategray;
     }
     li {
         display: block;
@@ -65,9 +48,9 @@
         clear: both;
         width: 100%;
     }
-    
-
 </style>
+
+
 
 <!-- Dropdown Menu -->
 <div class="menucontainer">
@@ -166,3 +149,16 @@
     </ul>
 </div>
 
+<script>
+
+    $('document').ready( function() {
+        $('.designated-giving-selection-container').hide();
+        $(".designated-program-label").hide();
+        $(".fund").click( function() {
+            $(".selected").removeClass("selected");
+            $(this).toggleClass("selected");
+            console.log("Fund Selected!");
+        });
+    });
+
+</script>
