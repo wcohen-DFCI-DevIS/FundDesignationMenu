@@ -1,0 +1,187 @@
+<style>
+    .dropdownBtn {
+        background-color: #3498DB;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .menuContainer {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown Content 1st Tier (Hidden by Default) */
+    .menuContainer {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .menuHalf {
+        display: inline-block;
+    }
+    .subMenu {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1b6;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    /* Links, 1st Tier, inside the dropdown */
+    .mcdropdown_menu .fund {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of 1st tier dropdown links on hover */
+    .mcdropdown_menu .fund:hover {
+        background-color: #ddd
+    }
+
+    /* Show the dropdown menu (use JS to add this class to the .mcdropdown_menu container when the user clicks on the dropdown button) */
+    .show {
+        display:block;
+    }
+</style>
+
+<!-- Dropdown Menu -->
+<a class="dropdownBtn" href="#">Select Designation...</a>
+<div class="menuContainer">
+    <div class="menuHalf">
+        <ul class="mcdropdown_menu" id="designationDD1">
+            <li class="fund">Area of greatest need</li>
+            <li class="fund">Family Wishes</li>
+            <li class="fund">Basic Research</li>
+            <li class="fund">Cancer Prevention</li>
+            <li class="fund">Drug Development</li>
+            <li class="fundGroup">Gastrointestinal Cancers
+                <ul class="subMenu">
+                    <li class="fund">Colon Cancer</li>
+                    <li class="fund">Colorectal Cancer</li>
+                    <li class="fund">Esophageal Cancer</li>
+                    <li class="fund">Neuroendocrine Tumor</li>
+                    <li class="fund">Pancreatic Cancer</li>
+                    <li class="fund">Stomach &amp; Gastric Cancers</li>
+                </ul>
+            </li>
+            <li class="fundGroup">Genitourinary (Urinary/Men's
+                <br /> Reproductive) Cancers
+                <ul class="subMenu">
+                    <li class="fund">Bladder Cancer</li>
+                    <li class="fund">Kidney Cancer</li>
+                    <li class="fund">Prostate Cancer</li>
+                </ul>
+            </li>
+            <li class="fund">Global Cancer Medicine</li>
+            <li class="fund">Head and Neck Cancers</li>
+            <li class="fundGroup">Hematologic (Blood) Cancers
+                <ul class="subMenu">
+                    <li class="fund">Greatest need</li>
+                    <li class="fund">Leukemia - Adult</li>
+                    <li class="fund">Lymphoma - Adult</li>
+                    <li class="fund">Leukemia and Lymphoma - Pediatric</li>
+                    <li class="fund">Multiple Myeloma</li>
+                    <li class="fund">Non-Hodgkins Lymphoma</li>
+                    <li class="fund">Waldenstrom's Macroglobulinemia</li>
+                </ul>
+            </li>
+            <li class="fund">Immunology</li>
+            <li class="fund">Lung Cancer</li>
+            <li class="fund">Melanoma</li>
+        </ul>
+    </div>
+    <div class="menuHalf">
+        <ul class="mcdropdown_menu" id="designationDD2">    
+            <li class="fund">Neuroblastoma</li>
+            <li class="fundGroup">Neurological Cancers
+                <ul class="subMenu">
+                    <li class="fund">Brain Tumor — Adult</li>
+                    <li class="fund">Brain Tumor — Pediatric</li>
+                </ul>
+            </li>
+            <li class="fund">Nursing</li>
+            <li class="fundGroup">Patient Assistance
+                <ul class="subMenu">
+                    <li class="fund">Patient Assistance — Adult</li>
+                    <li class="fund">Patient Assistance — Pediatric</li>
+                </ul>
+            </li>
+            <li class="fund">Pediatric Oncology</li>
+            <li class="fund"><em>Profile</em> Genetics Analysis</li>
+            <li class="fund">Psychosocial Oncology &amp;
+                <br /> Palliative Care</li>
+            <li class="fund">Radiation Oncology</li>
+            <li class="fundGroup">Sarcoma and Bone Cancers
+                <ul class="subMenu">
+                    <li class="fund">Sarcoma and Bone Cancers — Adult</li>
+                    <li class="fund">Sarcoma and Bone Cancers — Pediatric</li>
+                </ul>
+            </li>
+            <li class="fundGroup">Stem Cell Transplant
+                <ul class="subMenu">
+                    <li class="fund">Stem Cell Transplant — Adult</li>
+                    <li class="fund">Stem Cell Transplant — Pediatric</li>
+                </ul>
+            </li>
+            <li class="fundGroup">Survivorship
+                <ul class="subMenu">
+                    <li class="fund">Survivorship — Adult</li>
+                    <li class="fund">Survivorship — Pediatric</li>
+                </ul>
+            </li>
+            <li class="fundGroup">Women's Cancers
+                <ul class="subMenu">
+                    <li class="fund">Greatest need</li>
+                    <li class="fund">Breast Cancer</li>
+                    <li class="fund">Gynecologic Cancer</li>
+                    <li class="fund">Ovarian Cancer</li>
+                </ul>
+            </li>
+            <li class="fund">Zakim Center for Integrative
+                <br /> Therapies
+            </li>
+        </ul>
+    </div>
+</div>
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+</script>
+
+
+<script>
+
+$('document').ready( function() {
+    console.log("DOM is ready, listeners are listening");
+    $('.designated-giving-selection-container').hide();
+    $(".designated-program-label").hide();
+    $(".dropdownBtn").click( function(e) {
+        e.preventDefault()
+        console.log("Opening main menu...");
+        $(".menuContainer, .mcdropdown_menu, .fundGroup").toggleClass("show");
+    });
+    $(".fundGroup").hover(function() {
+        console.log("Hovered");
+        $(this).find(".subMenu").toggleClass("show");
+    });
+    $(".fund").click( function() {
+        console.log("A click!");
+        $(".selected").removeClass("selected");
+        $(this).toggleClass("selected");
+        console.log("Fund Selected!");
+    });
+});
+
+</script>
