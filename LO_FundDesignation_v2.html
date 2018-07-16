@@ -188,13 +188,8 @@ $('document').ready( function() {
         $(this).toggleClass("selected");
         console.log("Fund Selected!");
         var selectedFund = $(this).val();
-        console.log("Selected fund currently is set to " + selectedFund);
-        if (selectedFund == "Area of greatest need") {
-            selectedFund = "Unrestricted Fund"
-        };
-        var optVal = $("option:contains('" + selectedFund + "')").val();
-        console.log("Value is: " + optVal);        
-        $("select option[value='" + optVal +"']").attr("selected","selected");
+        console.log("Value is: " + selectedFund);        
+        $("select option[value='" + selectedFund +"']").attr("selected","selected");
     });
 });
 
